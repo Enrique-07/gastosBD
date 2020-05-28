@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Expense Manager"),
+          title: Text("Control de Gastos"),
           bottom: TabBar(
             controller: _tabController,
             tabs: [
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage>
             CategoryPage(),
             Center(
                 child: Text(
-              "Reports",
+              "Reportes",
               style: Theme.of(context).textTheme.display1,
             ))
           ],

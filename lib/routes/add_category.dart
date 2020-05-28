@@ -21,7 +21,7 @@ class _AddCategoryState extends State<AddCategory> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add New Category"),
+        title: Text("Agregar nueva categoría"),
       ),
       body: Container(
           padding: EdgeInsets.all(12.0),
@@ -32,7 +32,7 @@ class _AddCategoryState extends State<AddCategory> {
               return Column(
                 children: <Widget>[
                   TextField(
-                      decoration: InputDecoration(labelText: "Title"),
+                      decoration: InputDecoration(labelText: "Nombre Categoría"),
                       onChanged: (String text) {
                         if (text == null || text.trim() == "") return;
                         var category = catgorySnap.data;
@@ -40,7 +40,7 @@ class _AddCategoryState extends State<AddCategory> {
                         widget.categoryBloc.updateCreateCategory(upated);
                       }),
                   TextField(
-                      decoration: InputDecoration(labelText: "Description"),
+                      decoration: InputDecoration(labelText: "Descripción"),
                       maxLines: 2,
                       onChanged: (String text) {
                         if (text == null || text.trim() == "") return;
@@ -49,7 +49,7 @@ class _AddCategoryState extends State<AddCategory> {
                         widget.categoryBloc.updateCreateCategory(upated);
                       }),
                   Container(
-                    child: Text("Pick An Icon:"),
+                    child: Text("Escoge un icono:"),
                     margin: EdgeInsets.all(12.0),
                   ),
                   Expanded(
@@ -57,7 +57,7 @@ class _AddCategoryState extends State<AddCategory> {
                           padding: EdgeInsets.symmetric(vertical: 12.0),
                           child: _showIconGrid(catgorySnap.data))),
                   RaisedButton(
-                    child: Text("Create"),
+                    child: Text("Crear"),
                     onPressed: catgorySnap.data.title == null ? null : () async {
                       var createdId = await widget.categoryBloc.createNewCategory(catgorySnap.data);
                       if(createdId > 0) {

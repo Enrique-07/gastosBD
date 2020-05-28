@@ -32,7 +32,7 @@ class _CategoryPageState extends State<CategoryPage> {
           padding: EdgeInsets.all(12.0),
           width: 200.0,
           child: RaisedButton(
-            child: Text("Add New"),
+            child: Text("Agregar Categoría"),
             onPressed: () {
               Navigator.push(
                 context,

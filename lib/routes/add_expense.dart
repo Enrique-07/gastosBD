@@ -41,7 +41,7 @@ class _AddExpenseState extends State<AddExpense> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add New Expense"),
+        title: Text("Nuevo gasto"),
       ),
       body: Container(
           padding: EdgeInsets.all(12.0),
@@ -54,7 +54,7 @@ class _AddExpenseState extends State<AddExpense> {
                   Container(
                       margin: EdgeInsets.only(bottom: 12.0),
                       child: Text(
-                        "Pick Category",
+                        "Escoge una categoría",
                         style: Theme.of(context).textTheme.title,
                       )),
                   Container(
@@ -93,7 +93,7 @@ class _AddExpenseState extends State<AddExpense> {
                     ),
                   ),
                   TextField(
-                      decoration: InputDecoration(labelText: "Title"),
+                      decoration: InputDecoration(labelText: "Gasto"),
                       onChanged: (String text) {
                         if (text == null || text.trim() == "") return;
                         var expense = expenseSnap.data;
@@ -101,7 +101,7 @@ class _AddExpenseState extends State<AddExpense> {
                         widget.expenseBloc.updateCreateExpense(upated);
                       }),
                   TextField(
-                      decoration: InputDecoration(labelText: "Description"),
+                      decoration: InputDecoration(labelText: "Descripción"),
                       maxLines: 2,
                       onChanged: (String text) {
                         if (text == null || text.trim() == "") return;
@@ -110,7 +110,7 @@ class _AddExpenseState extends State<AddExpense> {
                         widget.expenseBloc.updateCreateExpense(upated);
                       }),
                   TextField(
-                      decoration: InputDecoration(labelText: "Amount"),
+                      decoration: InputDecoration(labelText: "Monto"),
                       maxLines: 2,
                       onChanged: (String text) {
                         if (text == null || text.trim() == "") return;
@@ -119,7 +119,7 @@ class _AddExpenseState extends State<AddExpense> {
                         widget.expenseBloc.updateCreateExpense(upated);
                       }),
                   RaisedButton(
-                    child: Text("Create"),
+                    child: Text("Crear"),
                     onPressed: expenseSnap.data.title == null ? null : () async {
                       var createdId = await widget.expenseBloc.createNewExpense(expenseSnap.data);
                       if(createdId > 0) {

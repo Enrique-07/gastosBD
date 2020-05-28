@@ -31,7 +31,7 @@ class _ExpensePageState extends State<ExpensePage> {
           padding: EdgeInsets.all(12.0),
           width: 200.0,
           child: RaisedButton(
-            child: Text("Add New"),
+            child: Text("Agregar Gasto"),
             onPressed: () {
               Navigator.push(
                 context,
