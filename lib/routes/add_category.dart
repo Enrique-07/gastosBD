@@ -6,14 +6,11 @@ class AddCategory extends StatefulWidget {
   final CategoryBloc categoryBloc;
 
   const AddCategory({Key key, this.categoryBloc}) : super(key: key);
-
   @override
   _AddCategoryState createState() => _AddCategoryState();
 }
 
 class _AddCategoryState extends State<AddCategory> {
-  
-
   @override
   void initState() {
     super.initState();
