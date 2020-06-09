@@ -62,6 +62,7 @@ class _ExpensePageState extends State<DashboardPage> {
                             color: Colors.white)),
                     margin: EdgeInsets.all(12.0),
                     child: ListTile(
+                      isThreeLine: true,
                       onTap: () {},
                       trailing: IconButton(
                         icon: Icon(Icons.delete),
@@ -76,8 +77,9 @@ class _ExpensePageState extends State<DashboardPage> {
                             .copyWith(color: Theme.of(context).accentColor),
                       ),
                       subtitle: expense.amount == null ? SizedBox() : Text(
-                        expense.notes,
-                      ),
+                        expense.notes + "\nMonto: " + (expense.amount).toString() + " Bs.",
+                      )
+                      ,
                     ),
                   );
                 },

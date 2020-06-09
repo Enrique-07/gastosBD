@@ -1,6 +1,9 @@
 import 'package:expense_manager/screens/category_page.dart';
 import 'package:expense_manager/screens/dahboard_page.dart';
+import 'package:expense_manager/screens/report_page.dart';
 import 'package:flutter/material.dart';
+import 'income_page.dart';
+import 'income2_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,7 +14,7 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
 
-  List<String> _tabs = ["Home", "Category", "Report"];
+  List<String> _tabs = ["Home", "Category", "Income", "Budget", "Reports"];
 
   @override
   void initState() {
@@ -27,9 +30,11 @@ class _HomePageState extends State<HomePage>
           bottom: TabBar(
             controller: _tabController,
             tabs: [
-              Tab(icon: Icon(Icons.home)),
+              Tab(icon: Icon(Icons.trending_down)),
               Tab(icon: Icon(Icons.category)),
-              Tab(icon: Icon(Icons.report)),
+              Tab(icon: Icon(Icons.monetization_on)),
+              Tab(icon: Icon(Icons.mode_edit)),
+              Tab(icon: Icon(Icons.donut_small)),
             ],
           ),
         ),
@@ -38,11 +43,9 @@ class _HomePageState extends State<HomePage>
           children: <Widget>[
             DashboardPage(),
             CategoryPage(),
-            Center(
-                child: Text(
-              "Reportes",
-              style: Theme.of(context).textTheme.display1,
-            ))
+            IncomePage(),
+            Income2Page(),
+            ChartsDemo()
           ],
         ));
   }

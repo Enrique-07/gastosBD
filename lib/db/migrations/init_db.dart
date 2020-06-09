@@ -16,3 +16,18 @@ const String initDbScript = """
       amount REAL
       );
     """;
+  const String createIncomeDbScript = """
+  CREATE TABLE Income (
+      id INTEGER PRIMARY KEY,
+      title TEXT,
+      amount INTEGER 
+      );
+    """;
+
+  const String createIncome2DbScript = """
+  CREATE TABLE Income2 (
+      id INTEGER PRIMARY KEY,
+      title TEXT,
+      amount INTEGER 
+      );
+    """;

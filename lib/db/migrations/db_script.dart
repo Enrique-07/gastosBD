@@ -5,5 +5,7 @@ class DbMigrator {
   static final Map<int, String> migrations = {
     1: initDbScript,
     2: createExpenseDbScript,
+    3: createIncomeDbScript,
+    4: createIncome2DbScript
   };
 }

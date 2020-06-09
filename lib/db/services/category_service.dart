@@ -68,4 +68,29 @@ class CategoryService implements CategoryServiceBase {
 
     return entity.isNotEmpty;
   }
+
+  Future countCategory() async {
+    var db = await OfflineDbProvider.provider.database;
+    var res = await db.query("Category");
+    if (res.isEmpty) return BuiltList();
+
+    var count = await db.rawQuery("SELECT COUNT(*) FROM category");
+    await db.close();
+
+    return count;
+  }
+
+  Future<BuiltList<CategoryModel>> getNames() async {
+    var db = await OfflineDbProvider.provider.database;
+    var res = await db.query("Category");
+    if (res.isEmpty) return BuiltList();
+
+    var list = BuiltList<CategoryModel>();
+    res.forEach((cat) {
+      var category = serializers.deserializeWith<CategoryModel>(CategoryModel.serializer, cat);
+      list = list.rebuild((b) => b..add(category));
+    });
+    return list.rebuild((b) => b..sort((a,b) => a.title.compareTo(b.title)));
+  }
+
 }
