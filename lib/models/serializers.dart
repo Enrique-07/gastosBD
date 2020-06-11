@@ -11,7 +11,8 @@ part 'serializers.g.dart';
 @SerializersFor(const [
   CategoryModel,
   ExpenseModel,
-  IncomeModel
+  IncomeModel,
+  Income2Model
 ])
 
 final Serializers serializers = (_$serializers.toBuilder()
