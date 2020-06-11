@@ -13,7 +13,9 @@ const String initDbScript = """
       categoryId INTEGER, 
       title TEXT,
       notes TEXT,
-      amount REAL
+      amount REAL,
+      FOREIGN KEY (categoryId)
+      REFERENCES Category (id)
       );
     """;
   const String createIncomeDbScript = """
